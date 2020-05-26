@@ -3,8 +3,8 @@ const mongoose = require('mongoose')
 const FarmaciaSchema = new mongoose.Schema({
     cnpj: String,
     nome: String,
-    latitude: String,
-    longitude: String,
+    latitude: Number,
+    longitude: Number,
     endereco: String,
     bairro: String,
     cep: String,
