@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Medicine</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+    <div class="container">
+        <section class="form">
+            <form onSubmit="">
+                <h1>Pesquise os melhores preços em farmácias próximas a você !</h1>
+                <label for="titulo">Título</label>
+                <input
+                    placeholder="Nome do medicamento"
+                    id="titulo"
+                />
+                <label for="raio">Raio de distancia</label>
+                <input
+                    id="raio"
+                    type="number"
+                />
+                <div class="form-row">
+                    <div class="form-group">
+
+                        <label for="latitude">Latitude</label>
+                        <input
+                            placeholder="-00.00000"
+                            id="latitude"
+                        />
+                    </div>
+                    <div class="form-group">
+
+                        <label for="longitude">Longitude</label>
+                        <input
+                            placeholder="-00.00000"
+                            id="longitude"
+                        />
+                    </div>
+                </div>
+                <button class="button" type="submit">Pesquisar</button>
+            </form>
+
+        </section>
+        <img src="../images/medicine.svg" alt="Medicamentos" />
+    </div>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocalização não suportada !")
+            }
+        }   
+        function showPosition(position) {
+          document.getElementById('latitude').value = position.coords.latitude
+          document.getElementById('longitude').value = position.coords.longitude;
+        }
+
+        getLocation()
+    </script>
+</body>
+</html>
