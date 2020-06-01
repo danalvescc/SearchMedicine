@@ -1,6 +1,6 @@
 const config = {
-    UrlBase: "http://localhost:3333",
-    ViewMap: "/map",
+    ApiBase: "http://localhost:3333",
+    ViewMap: "/map/index.html",
     ApiMedicamento: "/api/medicamento"
 }
 
@@ -15,7 +15,7 @@ try {
         if (titulo && latitude && longitude && raio) {
             titulo = titulo.toUpperCase()
 
-            location.href = `${config.UrlBase}${config.ViewMap}?titulo=${titulo}&latitude=${latitude}&longitude=${longitude}&raio=${raio}`
+            location.href = `..${config.ViewMap}?titulo=${titulo}&latitude=${latitude}&longitude=${longitude}&raio=${raio}`
         } else
             alert("Preenchimentos de todos os campos é obrigatório !")
     }

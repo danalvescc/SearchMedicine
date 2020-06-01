@@ -26,7 +26,7 @@ module.exports = {
             const promises = farmArray.map(async farm => {
                 let medicamentoNaFarm = await Medicamento.find({
                     id_farmacia: farm._id,
-                    titulo
+                    titulo: { $regex: '.*' + titulo + '.*' }
                 });
                 medicamentoArray = [...medicamentoArray, ...medicamentoNaFarm];
             })
