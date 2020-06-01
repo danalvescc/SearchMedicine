@@ -33,6 +33,16 @@ module.exports = {
 
             await Promise.all(promises)
 
+            medicamentoArray.sort(function (a, b) {
+                if (a.valor > b.valor) {
+                    return 1
+                }
+                if (a.valor < b.valor) {
+                    return -1;
+                }
+                return 0;
+            });
+
             res.json({
                 medicamentos: medicamentoArray,
                 farmacias: farmArray

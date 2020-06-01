@@ -5,33 +5,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search Medicine</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../global.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
     <script type='text/javascript'
-            src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[YOUR_BING_MAPS_KEY]' 
-            async defer></script>
-    
-    <script type='text/javascript'>
-    function GetMap()
-    {
-        var map = new Microsoft.Maps.Map('#myMap', {
-            center: new Microsoft.Maps.Location(-12.956350426502134,-38.451613555841064)
-        });
-        
-        var center = map.getCenter();
+        src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[YOUR_BING_MAPS_KEY]' async defer></script>
 
-        var pin = new Microsoft.Maps.Pushpin(center, {
-            title: 'Microsoft',
-            subTitle: 'City Center',
-            text: '1'
-        });
-        
-        map.entities.push(pin);
-    }
+    <script type='text/javascript'>
+        function GetMap() {
+            var map = new Microsoft.Maps.Map('#myMap');
+        }
     </script>
 </head>
+
 <body>
-    <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
+    <div class="container">
+        <section class="list">
+            <div>
+                <h1>Medicamentos encontrados :</h1>
+            </div>
+            <ul id="listDrugs">
+
+            </ul>
+        </section>
+        <div id="myMap" style="position:relative;width:900px;height:600px;"></div>
+    </div>
+
+
     <script src="../main.js"></script>
     <script src="../map.js"></script>
 </body>
